@@ -1,0 +1,36 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Student;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class StudentSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $students = [];
+        foreach(range(1,10) as $index){
+          $student = [
+            'name' => fake()->name(),
+            'username' => fake()->firstName()."__$index",
+            'email' => fake()->email(),
+            'address' => fake()->address(),
+            'phone' => fake()->phoneNumber(),
+            'created_at' => now(),
+            'updated_at' => now(),
+          ];
+
+          $students[]= $student;
+        }
+
+        Student::truncate();
+        Student::insert($students);
+
+    }
+}

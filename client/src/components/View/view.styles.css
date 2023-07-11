@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 1rem;
+  box-shadow: #0000001a 0px 4px 12px;
+  border: 1px solid #b3b3b3;
+  width: 93.75rem;
+}
+
+th {
+  text-transform: capitalize;
+  font-size: 1.135rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid #b3b3b3;
+  padding: 0.2rem 1.2rem;
+}
+
+td span {
+  padding: 6px 0;
+}
+
+tbody tr:nth-child(2n + 1){
+  background-color: #eee;
+}
+thead tr {
+  background-color: #da1c1c;
+  color: white;
+}
+
+.action__btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+
+}
+
+.address--field + .address--field::before {
+  content: ",";
+  padding: 4px;
+}
+
+button {
+  display: inline;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn__edit {
+  background-color: #0f46dd;
+}
+
+.btn__remove {
+  background-color: #da1c1c;
+}
+
+.skeleton {
+  height: 2.7109rem;
+  width: 100%;
+  background-color: #ececec;
+  animation: skeleton .8s infinite alternate;
+}
+
+td[colspan='7'] {
+  padding: 0 !important;
+}
+
+@keyframes skeleton {
+  to {
+    opacity: .1;
+  }
+}
